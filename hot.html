@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body {
+        padding: 100px;
+        background: #2b2b2b url(background.png);
+      }
+
+      h1 {
+        margin-bottom: 40px;
+        font-family: cursive;
+        color: #fff;
+      }
+
+      a.tooltip {
+        position: relative;
+        display: block;
+        width: 100px;
+        height: 100px;
+        border: 5px solid #4b4b4b;
+        background: #fff no-repeat center;
+        border-radius: 55px;
+        background-size: cover;
+      }
+
+      .gallery-nav li {
+        float: left;
+        margin-right: 100px;
+      }
+
+      a.tooltip.photo1 {
+        background-image: url(참치친구연어.png);
+      }
+
+      a.tooltip.photo2 {
+        background-image: url(하앗산.png);
+      }
+
+      a.tooltip.photo3 {
+        background-image: url(승용.jpg);
+      }
+
+      a.tooltip.photo4 {
+        background-image: url(우주개굴.png);
+      }
+
+      a.tooltip.photo5 {
+        background-image: url(오른날개.png);
+      }
+
+      a.tooltip .tooltip-box {
+        position: absolute;
+        opacity: 0;
+        width: 20em;
+        padding: .8em;
+        background: #111;
+        bottom: 100px;
+        margin-left: -10.4em;
+        border-radius: 15px 0px;
+        transition: all .4s ease-in .2s;
+      }
+
+      a.tooltip .tooltip-title {
+        color: #fff;
+      }
+
+      a.tooltip .tooltip-desc {
+        margin-bottom: 0;
+        font-size: 11px;
+        text-align: justify;
+        color: #bcbcbc;
+      }
+
+      a.tooltip.tooltip-box:before {
+        content: ' ';
+        position: absolute;
+        bottom: -10px;
+        left: 120px;
+        border-top: 10px solid #111;
+
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+      }
+
+      a.tooltip:hover .tooltip-box,
+      a.tooltip:focus .tooltip-box {
+        opacity: 1;
+        bottom: 90px;
+      }
+
+      a.tooltip:hover,
+      a.tooltip:focus {
+        border-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>인물 소개</h1>
+    <ul class="gallery-nav">
+      <li>
+        <a class="tooltip photo1" href="http://postfiles6.naver.net/MjAxNzAxMDRfMjgz/MDAxNDgzNTI3NTc3MjE2.IjhQpANR1Tr0LCe-BJJp7wG5HSs25wnSHuy2PYdJY2kg.lxjR33FWmjqCNai_lQ65iOCeC-4t_WTbkZRTF-fomYEg.JPEG.qksdi91/%ED%95%84%EB%A6%AC%ED%95%80_%EC%B0%B8%EC%B9%98%ED%9A%8C_%EC%97%B0%EC%96%B4%ED%9A%8C040.jpg?type=w1" target="_blank">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">신용준 연어 20마리</h4>
+            <p class="tooltip-desc">반 쪽 남은 참치와 가까워지고 싶은 연어 20마리이다.</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="tooltip photo2" href="http://image.dcinside.com/viewimagePop.php?id=2fbcc323e7d334aa51b1d3a245&no=29bcc427b08777a16fb3dab004c86b6f9a5eaacb90038f4d40cac74a0053a052843018c4b33962871d57c93b6066ee373b95cf27b05a6a71b14c4476ea599fa01eb826f9050148e68beea2&f_no=24e9887fbc806af13ced84fb1cc123" target="_blank">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">박준형 핫산</h4>
+            <p class="tooltip-desc">처음엔 맷돌에 갈리다가 요즘에는 최신 믹서기로 갈리는 핫산이다.</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="tooltip photo3" href="https://www.youtube.com/embed/Pl7EP9gvfMA/?autoplay=1" target="_blank">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">손승용 기모찌</h4>
+            <p class="tooltip-desc">1학년 2반 전교 부회장이다. '손승용 기모찌!'를 시전한 바 있는 기모찌이다. (그냥 바보)</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="tooltip photo4" href="http://mblogthumb1.phinf.naver.net/20160624_260/c_h_e_r_r_y__1466750148019rnXRn_JPEG/ScreenShot_16-06-24_15-10-53-000.jpg?type=w2" target="_blank">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">김태영 우주 개구리</h4>
+            <p class="tooltip-desc">개구리는 개구리인데 무려 우주 개구리이다.</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="tooltip photo5" href="https://pbs.twimg.com/profile_images/852782528129753089/py8iY2dU.jpg" target="_blank">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">김현우 우파</h4>
+            <p class="tooltip-desc">...다른 의미는 없다.</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>

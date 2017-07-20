@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>로그인</title>
+    <style>
+    body {
+      height: 100%;
+      overflow-y: scroll;
+      background: url(reg-background.jpg);
+    }
+
+    #popup-login {
+      padding-left: 25px;
+      position: absolute;
+      top: 28%;
+      left: 36%;
+      width: 400px;
+      min-height: 280px;
+      border: 0px solid #dcdcdc;
+      border-radius: 15px 15px;
+      background: #f2f2f2;
+    }
+
+    #popup-login button {
+      width: 355px;
+      height: 40px;
+      border: 0;
+      background-color: yellow;
+      cursor: pointer;
+    }
+
+
+    #a {
+      margin-left: 120px;
+      font-size: 10px;
+      left: 100px;
+    }
+
+    a{
+      text-decoration: none;
+      color: grey;
+    }
+  </style>
+  </head>
+  <body>
+    <div id="popup-login">
+      <h4 title="로그인">login</h4>
+      <form id="login_form" action="#" method="post">
+        <p>
+          <input id="u_id" type="text" placeholder="아이디" required>
+        </p>
+        <p>
+          <input id="u_password" type="password" placeholder="비밀번호" required>
+        </p>
+        <p id="add_count">
+          <button type="submit" name="button">로그인</button>
+        </p>
+        <div id="a">
+          <a href="#">ID/PW 찾기</a> | <a href="#">회원가입</a></div>
+      </form>
+    </div>
+  </body>
+</html>
