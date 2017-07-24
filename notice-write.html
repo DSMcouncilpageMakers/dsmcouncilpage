@@ -25,24 +25,24 @@
     </div>
     <div id="notice-write-main">
       <h5>제목</h5>
-      <form class="write-title" action="add.php" method="post">
-        <input type="text" name="title" style="width: 820px;">
+      <form class="write-title" action="notice.html" method="post">
+        <input type="text" name="notice-title" style="width: 820px;">
         <input type="text" style="display: none;">
         <h5>공지 내용</h5>
-        <textarea name="contents" class="write-body" rows="16" cols="100" style="resize: none;"></textarea>
-        <script>
-          for (var i = 0; i < 10; i++) {
-            document.write('&emsp;');
-          }
-          </script>
-        <input type="image" class="over" src="write-over.png" style="width:150px">
-        <script>
-          for (var i = 0; i < 8; i++) {
-            document.write('&emsp;');
-          }
-        </script>
+        <textarea class="write-body" rows="16" cols="100" style="resize: none;"></textarea>
+      <script><!--이 부분은 php로 대체-->
+        for (var i = 0; i < 10; i++) {
+          document.write('&emsp;');
+        }
+      </script>
+        <input type="image" class="over" src="write-over.png" style="width:150px; height:40px">
       </form>
-        <input type="image" class="over" src="cancel.png" style="width:150px">
+      <script>
+        for (var i = 0; i < 8; i++) {
+          document.write('&emsp;');
+        }
+      </script>
+        <a href="#" class="cancel"><img src="cancel.png" style="width:150px; height:40px"></a>
     </div>
   </body>
 </html>
