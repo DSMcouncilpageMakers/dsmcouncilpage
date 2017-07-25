@@ -1,141 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>레이어 팝업 실화냐</title>
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ropa+Sans">
-<link rel="stylesheet" href="main.css">
-<script src="./js/vendor/modernizr.custom.min.js"></script>
-<script src="./js/vendor/jquery-1.10.2.min.js"></script>
-<script src="main.js"></script>
-
-<style>
-
-</style>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>로그인</title>
+    <link rel="stylesheet" href="login2.css">
+  </head>
   <body>
-    <div id="body">
-      <img id="dsm-logo" src="b3.png">
-      <header class="page-header" role="banner">
-        <div class="inner">
-          <div class="site-logo"><a href="please-help-me.html"><img src="logo.jpg" alt="Shiftbrain" height="65" width="300" margin-left="-50"></a></div>
-          <nav class="primary-nav" role="navigation">
-            <ul>
-              <li><a href="#">행사</a></li>
-              <li><a href="notice.html">공지 사항</a></li>
-              <li><a href="opinion.html">건의 사항</a></li>
-              <li><a href="hot.html">학생회 임원</a></li>
-              <li><a href="login2.html" onclick="window.open(this.href, '', 'left: 1000, top: 500 width=400, height=200'); return false">로그인</a></li>
-            </ul>
-          </nav>
+    <div id="popup-login">
+      <h4 title="로그인">login</h4>
+      <form id="login_form" action="login.php" method="post">
+        <p>
+          <input name="id" id="u_id" type="text" placeholder="아이디" required>
+        </p>
+        <p>
+          <input name="pw" id="u_password" type="password" placeholder="비밀번호" required>
+        </p>
+        <p id="add_count">
+          <button type="submit" name="button">로그인</button>
+        </p>
+    </form>
+        <div id="a">
+          <a href="#">ID/PW 찾기</a> | <a href="#">회원가입</a>
         </div>
-      </header>
-      <div id="rule">
-        <br>
-        <p>&emsp;1. 청소를 열심히</p>
-        <p>&emsp;2. 수업참여를 열심히</p>
-      </div>
-    <div class="dummy">
-      <a class="main-wrapper">
-      <div class="group">
-        <h2 class="gohome">의무귀가 카운트다운</h2>
-          <div class="hidden">
-            <p class="timer">남은 시간 : <span id="day"></span>일<span id="hour"></span>시간<span id="min"></span>분<span id="sec"></span>초</p>
-            <p class="timer">남은 시간 : <span id="resth"></span>시간<span id="restm"></span>분<span id="rests"></span>초</p>
-            <p class="timer">남은 시간 : <span id="restm1"></span>분<span id="rests1"></span>초</p>
-            <p class="timer">남은 시간 : <span id="rests2"></span>초</p><br>
-          </div>
-        </div>
-        <br><br><br>
-        <div class="group">
-          <h2 class="gohome">귀가충 카운트다운</h2>
-          <div class="hidden">
-            <p class="timer2">남은 시간 : <span id="days2"></span>일<span id="hours2"></span>시간<span id="min2"></span>분<span id="sec2"></span>초</p>
-            <p class="timer2">남은 시간 : <span id="resth2"></span>시간<span id="restm2"></span>분<span id="rests3"></span>초</p>
-            <p class="timer2">남은 시간 : <span id="restm3"></span>분<span id="rests4"></span>초</p>
-            <p class="timer2">남은 시간 : <span id="rests5"></span>초</p><br>
-          </div>
-        </div>
-      </a>
     </div>
-  </div>
-
-
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $('.gohome').on('click',function(){
-        $(this).next().slideToggle('fast');
-      });
-    });
-  </script>
-  <script>
-    var countdown = function(due) {
-    var now = new Date();
-
-    var rest = due.getTime() - now.getTime();
-    var sec = Math.floor(rest / 1000 % 60);
-    var min = Math.floor(rest / 1000 / 60) % 60;
-    var hours = Math.floor(rest / 1000 / 60 / 60) % 24;
-    var days = Math.floor(rest / 1000 / 60 / 60 / 24);
-    var days2 = Math.floor(rest / 1000 / 60/ 60/ 24);
-    var hours2 = Math.floor(rest / 1000 / 60 / 60) % 24;
-    var resth = hours+days*24 ;
-    var restm1 = min + hours*60 + days*60*24;
-    var rests2 = sec + min*60 + hours*60*60 + days*60*60*24;
-    var resth2 = hours2 + days2*24;
-    var restm2 = min2 + hours2*60 + days2*60*24;
-    var rests5 = sec2 + min2*60 + hours2*60*60 + days2*60*60*24;
-    var count = [days, hours, min, sec, resth, restm1, rests2];
-    var count1 = [days2, hours2, min2, sec2, resth2, restm3];
-
-    return count;
-  }
-
-  var count = 0;
-  var goal1 = new Date(2017, 6, 21, 15, 40);//2017년 6월 30일 15시 20분(월은 -1해서 입력)--의무귀가
-  var goal2 = new Date(2017, 6, 14, 20, 30);//2017년 6월 30일 15시 20분--귀가
-  var nowTime = new Date();
-  var recalc = function() {
-  var nowTime=new Date().getTime();
-    if(goal1-nowTime<0) {
-      goal1=new Date(2017, 7, 5, 15, 20);
-    }
-    if(goal2-nowTime<0) {
-      goal2=new Date(2017, 6, 21, 15, 20)
-    }
-    var counter = countdown(goal1);
-    var counter1 = countdown(goal2);
-
-    document.getElementById('day').textContent = counter[0];
-    document.getElementById('hour').textContent = counter[1];
-    document.getElementById('min').textContent = counter[2];
-    document.getElementById('sec').textContent = counter[3];
-    document.getElementById('resth').textContent = counter[4];
-    document.getElementById('restm').textContent = counter[2];
-    document.getElementById('rests').textContent = counter[3];
-    document.getElementById('restm1').textContent = counter[5];
-    document.getElementById('rests1').textContent = counter[3];
-    document.getElementById('rests2').textContent = counter[6];
-
-    document.getElementById('days2').textContent = counter1[0];
-    document.getElementById('hours2').textContent = counter1[1];
-    document.getElementById('min2').textContent = counter1[2];
-    document.getElementById('sec2').textContent = counter1[3];
-    document.getElementById('resth2').textContent = counter1[4];
-    document.getElementById('restm2').textContent = counter1[2];
-    document.getElementById('rests3').textContent = counter1[3];
-    document.getElementById('restm3').textContent = counter1[5];
-    document.getElementById('rests4').textContent = counter1[3];
-    document.getElementById('rests5').textContent = counter1[6];
-    refresh();
-  }
-
-  var refresh = function() {
-    setTimeout(recalc, 1000);
-  }
-  recalc();
-</script>
-</body>
+  </body>
 </html>
