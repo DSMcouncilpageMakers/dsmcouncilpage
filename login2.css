@@ -1,9 +1,10 @@
- body {
+    body {
       overflow-y: scroll;
       background: url(reg-background.jpg);
       width: auto;
       height: auto;
     }
+
     #popup-login {
       padding-left: 5%;
       padding-top: 0.5%;
@@ -14,6 +15,7 @@
       border-radius: 15% 15%;
       background: #f2f2f2;
     }
+
     #popup-login button {
       width: 70%;
       height: 20%;
@@ -22,16 +24,20 @@
       cursor: pointer;
       margin: auto;
     }
+
+
     #a {
       margin-left: 10%;
       font-size: 10px;
       margin-left: auto;
     }
+
     a{
       text-decoration: none;
       color: grey;
       margin: auto;
     }
+
     h4, #u_id, #u_password{
       width: 70%;
       height: 3vh;
