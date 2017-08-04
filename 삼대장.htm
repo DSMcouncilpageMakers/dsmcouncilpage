@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html lang="ko" class="no-js old ie6"><![endif]-->
+<!--[if IE 7]><html lang="ko" class="no-js old ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="no-js old ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="no-js modern ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ko" class="no-js modern"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style>
+    body {
+        width: 100%;
+        height: 100%;
+        background: url(threemen.jpg) no-repeat;
+        background-size: cover;
+    }
+    .gallery-nav li {
+        list-style: none;
+        float: left;
+    }
+    #li1 {
+        margin-left: 130px;
+    }
+    #li2 {
+        margin-left: 340px;
+    }
+    #li3 {
+        margin-left: 310px;
+    }
+    a.tooltip {
+        position: relative;
+        display: block;
+        width: 100px;
+        height: 100px;
+        border: 5px solid #4b4b4b;
+        background: #fff no-repeat center;
+        border-radius: 55px;
+        background-size: cover;
+        text-decoration: none;
+      }
+    a.tooltip.photo1 {
+        background-image: url(참치친구연어.png);
+      }
+
+      a.tooltip.photo2 {
+        background-image: url(하앗산.png);
+      }
+
+      a.tooltip.photo3 {
+        background-image: url(승용.jpg);
+      }
+    a.tooltip .tooltip-title {
+        color: white;
+    }
+    a.tooltip .tooltip-box {
+        position: absolute;
+        top: 92px;
+        left: -35px;
+        opacity: 0;
+        width: 15em;
+        padding: .8em;
+        background: #222;
+        border-radius:  15px 0px;
+        width: 150%;
+        line-height: 20px;
+        transition: all .3s ease-in .1s;
+    }
+    a.tooltip .tooltip-desc {
+        margin-bottom: 0;
+        text-align: justify;
+        color: #bcbcbc;
+        font-size: 12px;
+    }
+    a.tooltip:hover .tooltip-box {
+        opacity: 1;
+    }
+</style>
+</head>
+<body>
+    <ul class="gallery-nav">
+      <li id="li1">
+        <a class="tooltip photo1" href="http://postfiles6.naver.net/MjAxNzAxMDRfMjgz/MDAxNDgzNTI3NTc3MjE2.IjhQpANR1Tr0LCe-BJJp7wG5HSs25wnSHuy2PYdJY2kg.lxjR33FWmjqCNai_lQ65iOCeC-4t_WTbkZRTF-fomYEg.JPEG.qksdi91/%ED%95%84%EB%A6%AC%ED%95%80_%EC%B0%B8%EC%B9%98%ED%9A%8C_%EC%97%B0%EC%96%B4%ED%9A%8C040.jpg?type=w1" target="_blank">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">신용준 연어 20마리</h4>
+            <p class="tooltip-desc">반 쪽 남은 참치와 가까워지고 싶은 연어 20마리이다.</p>
+          </div>
+        </a>
+      </li>
+      <li id="li2">
+        <a class="tooltip photo2" href="http://image.dcinside.com/viewimagePop.php?id=2fbcc323e7d334aa51b1d3a245&no=29bcc427b08777a16fb3dab004c86b6f9a5eaacb90038f4d40cac74a0053a052843018c4b33962871d57c93b6066ee373b95cf27b05a6a71b14c4476ea599fa01eb826f9050148e68beea2&f_no=24e9887fbc806af13ced84fb1cc123" target="_blank">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">박준형 핫산</h4>
+            <p class="tooltip-desc">처음엔 맷돌에 갈리다가 요즘에는 최신 믹서기로 갈리는 핫산이다.</p>
+          </div>
+        </a>
+      </li>
+      <li id="li3">
+        <a class="tooltip photo3" href="https://www.youtube.com/embed/Pl7EP9gvfMA/?autoplay=1" target="_blank">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">손승용 기모찌</h4>
+            <p class="tooltip-desc">1학년 2반 전교 부회장이다. '손승용 기모찌!'를 시전한 바 있는 기모찌이다. <br>(그냥 바보)</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+</body>
+</html>
