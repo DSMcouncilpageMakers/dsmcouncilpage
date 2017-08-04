@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>레이어 팝업 실화냐</title>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ropa+Sans">
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="tap.css">
+<script src="./js/vendor/modernizr.custom.min.js"></script>
+<script src="./js/tap.js"></script>
+<script src="./js/vendor/jquery-1.10.2.min.js"></script>
+<script src="./js/main.js"></script>
+
+<style>
+  #body {
+    height: 100%;
+  }
+
+  section{
+    background-color: white;
+    margin:auto;
+    border-radius: 10px;
+    width: 800px;
+    border-style: dashed;
+  }
+
+  .gohome {
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .group{
+    background-color: white;
+
+    border-radius: 10px;
+    width: 800px;
+    border-style: dashed;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .timer {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+  }
+  .timer span {
+    font-size: 72px;
+  }
+  .timer2{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .timer2 span{
+    font-size: 72px;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .tab {
+    margin-left: 270px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+  }
+
+  #popup-login{
+    display: none;
+    position: absolute;
+  }
+
+  #popup-login {
+    padding-left: 25px;
+    top: 28%;
+    left: 36%;
+    width: 400px;
+    min-height: 280px;
+    border: 0px solid #dcdcdc;
+    border-radius: 15px 15px;
+    background: #D4D4D4;
+  }
+
+  #popup-login button {
+    width: 355px;
+    height: 40px;
+    border: 0;
+    background-color: yellow;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  #a {
+    margin-left: 120px;
+    font-size: 12px;
+    left: 100px;
+  }
+
+  #popup-login a{
+    text-decoration: none;
+    color: grey;
+  }
+
+  input {
+    width: 350px;
+    height: 35px;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    margin-top: 10px;
+  }
+  h3 {
+    font-size: 20px;
+    margin-left:380px;
+    color: #F3F3F3;
+    cursor: pointer;
+  }
+  table {
+    margin-left: 60px; 
+  }
+</style>
+</head>
+  <body>
+    <div id="body">
+      <img id="dsm-logo" src="./img/b3.png" alt="">
+      <header class="page-header" role="banner">
+        <div class="inner">
+          <h1 class="site-logo"><a href="#"><img src="./img/logo.jpg" alt="Shiftbrain" height="65" width="300"></a></h1>
+          <nav class="primary-nav" role="navigation">
+            <ul>
+              <li><a href="#">행사</a></li>
+              <li rel="notice" class="active"><a href="#notice">공지 사항</a></li>
+              <li rel="opinion"><a href="#opinion">건의 사항</a></li>
+              <li rel="member"><a href="hot.html">학생회 임원</a></li>
+              <li rel="login"><a href="#popup-login" class="login-button">로그인</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+    <div class="tab">
+      <a class="main-wrapper">
+      <div class="group">
+        <h2 class="gohome">의무귀가 카운트다운</h2>
+          <div class="hidden">
+            <p class="timer">남은 시간 : <span id="day"></span>일<span id="hour"></span>시간<span id="min"></span>분<span id="sec"></span>초</p>
+            <p class="timer">남은 시간 : <span id="resth"></span>시간<span id="restm"></span>분<span id="rests"></span>초</p>
+            <p class="timer">남은 시간 : <span id="restm1"></span>분<span id="rests1"></span>초</p>
+            <p class="timer">남은 시간 : <span id="rests2"></span>초</p><br><br><br>
+          </div>
+        </div>
+        <br><br><br>
+        <div class="group">
+          <h2 class="gohome">귀가충 카운트다운</h2>
+          <div class="hidden">
+            <p class="timer2">남은 시간 : <span id="days2"></span>일<span id="hours2"></span>시간<span id="min2"></span>분<span id="sec2"></span>초</p>
+            <p class="timer2">남은 시간 : <span id="resth2"></span>시간<span id="restm2"></span>분<span id="rests3"></span>초</p>
+            <p class="timer2">남은 시간 : <span id="restm3"></span>분<span id="rests4"></span>초</p>
+            <p class="timer2">남은 시간 : <span id="rests5"></span>초</p>
+          </div>
+        </div>
+      </a>
+  </div>
+
+  <div class="tab" id="notice">
+        <table class="notice-list">
+          <caption>
+            <h1>공지사항</h1>
+            <h5>이곳은 공지사항이 올라오는 곳입니다.</h5>
+            <a href="notice-write.html"><img id="write" src="write.png" width="80"></a>
+          </caption>
+          <colgroup>
+            <col width="10%">
+            <col width="*">
+            <col width="25%">
+            <col width="15%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">일련번호</th>
+              <th scope="col">제목</th>
+              <th scope="col">작성자</th>
+              <th scope="col">작성일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="notice-num"> 1000</td>
+              <td class="notice-title"><a href="#"> 제에에에에목</a></td>
+              <td class="notice-writer"> !노룡!</td>
+              <td class="notice-date"> 2017-07-11</td>
+            </tr>
+            <tr>
+              <td class="notice-num"> 1001</td>
+              <td class="notice-ptitle"><a href="#"> 제에에에에에목</a></td>
+              <td class="notice-writer"> !신룡!</td>
+              <td class="notice-date"> 2017-07-11</td>
+            </tr>
+            <tr>
+              <td class="notice-num"> 1002</td>
+              <td class="notice-title"><a href="#"> 제에에에에에에목</a></td>
+              <td class="notice-writer"> !손승룡!</td>
+              <td class="notice-board_date"> 2017-07-11</td>
+            </tr>
+            <tr>
+              <td class="notice-num"> 1003</td>
+              <td class="notice-title"><a href="#"> 제에에에에에에에목</a></td>
+              <td class="notice-writer"> !핫산!</td>
+              <td class="notice-date"> 2017-07-11</td>
+            </tr>
+            <tr>
+              <td class="notice-num"> 1004</td>
+              <td class="notice-title"><a href="#"> 제에에에에에에에에에에목</a></td>
+              <td class="notice-writer"> !내 여친은 2D!</td>
+              <td class="notice-date"> 2017-07-11</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tab" id="opinion">
+        <table class="notice-list">
+          <caption>
+            <h1>건의사항</h1>
+            <h5>이곳은 건의사항을 적어주면 수렴을 하는 곳입니다.</h5>
+            <a href="opinion-write.html"><img id="write" src="write.png" width="80"></a>
+          </caption>
+          <colgroup>
+            <col width="10%">
+            <col width="*">
+            <col width="15%">
+            <col width="13%">
+          </colgroup>
+          <thead>
+            <tr>
+             <th scope="col">일련번호</th>
+             <th scope="col">제목</th>
+             <th scope="col">작성자</th>
+             <th scope="col">작성일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="notice-num"> 1000</td>
+              <td class="notice-title"><a href="#"> 제에에에에목</a></td>
+              <td class="notice-writer"> !노룡!</td>
+              <td class="notice-date"> 2017-07-11</td>
+            </tr>
+           <tr>
+              <td class="notice-num"> 1001</td>
+              <td class="notice-ptitle"><a href="#"> 제에에에에에목</a></td>
+              <td class="notice-writer"> !신룡!</td>
+              <td class="notice-date"> 2017-07-11</td>
+            </tr>
+            <tr>
+              <td class="notice-num"> 1002</td>
+              <td class="notice-title"><a href="#"> 제에에에에에에목</a></td>
+              <td class="notice-writer"> !손승룡!</td>
+              <td class="notice-board_date"> 2017-07-11</td>
+            </tr>
+            <tr>
+              <td class="notice-num"> 1003</td>
+              <td class="notice-title"><a href="#"> 제에에에에에에에목</a></td>
+              <td class="notice-writer"> !핫산!</td>
+              <td class="notice-date"> 2017-07-11</td>
+            </tr>
+            <tr>
+             <td class="notice-num"> 1004</td>
+              <td class="notice-title"><a href="#"> 제에에에에에에에에에에목</a></td>
+              <td class="notice-writer"> !내 여친은 2D!</td>
+              <td class="notice-date"> 2017-07-11</td>
+            </tr>
+         </tbody>
+        </table>
+      </div>
+
+  <div id="popup-login">
+    <h3 id="quit">x</h3>
+    <h4 title="로그인">login</h4>
+    <form id="login_form" action="#" method="post">
+      <p>
+        <input id="u_id" type="text" placeholder="아이디" required>
+      </p>
+      <p>
+        <input id="u_password" type="password" placeholder="비밀번호" required>
+      </p>
+      <p id="login-button">
+        <button type="submit" name="button">로그인</button>
+      </p>
+      <div id="a">
+        <a href="#">ID/PW 찾기</a> | <a href="#">회원가입</a>
+      </div>
+    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.gohome').on('click',function(){
+        $(this).next().slideToggle('fast');
+      });
+    });
+  </script>
+  <script>
+    var countdown = function(due) {
+    var now = new Date();
+
+    var rest = due.getTime() - now.getTime();
+    var sec = Math.floor(rest / 1000 % 60);
+    var min = Math.floor(rest / 1000 / 60) % 60;
+    var hours = Math.floor(rest / 1000 / 60 / 60) % 24;
+    var days = Math.floor(rest / 1000 / 60 / 60 / 24);
+    var days2 = Math.floor(rest / 1000 / 60/ 60/ 24);
+    var hours2 = Math.floor(rest / 1000 / 60 / 60) % 24;
+    var resth = hours+days*24 ;
+    var restm1 = min + hours*60 + days*60*24;
+    var rests2 = sec + min*60 + hours*60*60 + days*60*60*24;
+    var resth2 = hours2 + days2*24;
+    var restm2 = min2 + hours2*60 + days2*60*24;
+    var rests5 = sec2 + min2*60 + hours2*60*60 + days2*60*60*24;
+    var count = [days, hours, min, sec, resth, restm1, rests2];
+    var count1 = [days2, hours2, min2, sec2, resth2, restm3];
+
+    return count;
+  }
+
+  var count = 0;
+  var goal1 = new Date(2017, 6, 21, 15, 40);//2017년 6월 30일 15시 20분(월은 -1해서 입력)--의무귀가
+  var goal2 = new Date(2017, 6, 14, 20, 30);//2017년 6월 30일 15시 20분--귀가
+  var nowTime = new Date();
+  var recalc = function() {
+  var nowTime=new Date().getTime();
+    if(goal1-nowTime<0) {
+      goal1=new Date(2017, 7, 5, 15, 20);
+    }
+    if(goal2-nowTime<0) {
+      goal2=new Date(2017, 6, 21, 15, 20)
+    }
+    var counter = countdown(goal1);
+    var counter1 = countdown(goal2);
+
+    document.getElementById('day').textContent = counter[0];
+    document.getElementById('hour').textContent = counter[1];
+    document.getElementById('min').textContent = counter[2];
+    document.getElementById('sec').textContent = counter[3];
+    document.getElementById('resth').textContent = counter[4];
+    document.getElementById('restm').textContent = counter[2];
+    document.getElementById('rests').textContent = counter[3];
+    document.getElementById('restm1').textContent = counter[5];
+    document.getElementById('rests1').textContent = counter[3];
+    document.getElementById('rests2').textContent = counter[6];
+
+    document.getElementById('days2').textContent = counter1[0];
+    document.getElementById('hours2').textContent = counter1[1];
+    document.getElementById('min2').textContent = counter1[2];
+    document.getElementById('sec2').textContent = counter1[3];
+    document.getElementById('resth2').textContent = counter1[4];
+    document.getElementById('restm2').textContent = counter1[2];
+    document.getElementById('rests3').textContent = counter1[3];
+    document.getElementById('restm3').textContent = counter1[5];
+    document.getElementById('rests4').textContent = counter1[3];
+    document.getElementById('rests5').textContent = counter1[6];
+    refresh();
+  }
+
+
+  var refresh = function() {
+    setTimeout(recalc, 1000);
+  }
+  recalc();
+</script>
+<script>
+  $(document).ready(function(){
+    $('.login-button')
+      .on('click', function(){ 
+        $('#body').css('opacity','0.5');
+      })
+      .on('click',function(){
+        $('#popup-login').show('fast');
+      });
+    $('#quit')
+      .on('click', function () {
+        $('#popup-login').css({
+          display: 'none'
+         })
+      .on('click', function () {
+        $('#body').css('opacity', 1);
+        });
+      });
+  });
+    
+  $(function(){
+    $(".tab").hide();
+    $(".tab:first").show();
+
+    $("ul li").click(function() {
+        $("ul li").removeClass("active").css("backgroundColor", "white");
+        $(this).addClass("active").css({
+          "background-color": "#f3f3f3"
+        });
+        $(".tab").hide()
+        var activeTab = $(this).attr("rel");
+        $("#"+activeTab).fadeIn();
+    });
+});
+</script>
+</body>
+</html>

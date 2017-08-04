@@ -1,0 +1,7 @@
+.dummy, .notice, .opinion {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
