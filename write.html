@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        input {
+            resize: none;
+            outline: none;
+            border: 0;
+        }
+        textarea {
+            resize: none;
+            outline: none;
+            width: 300px;
+            border: 0;
+        }
+        th {
+            width: 100px;
+            background: #F3F3F3;
+        }
+        .line {
+            height: 0.1px;
+            background: #F3F3F3;
+        }
+        th, td {
+            border:1px solid black;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        .input {
+            width: 100%;            
+        }
+        .file {
+            position: relative; 
+            width: 100px;
+            height: 100px;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .replace {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background: url(file.png);
+            background-size: cover;
+        }
+        ul li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <form action=""> <!--action에 뭐녛냐?-->
+        <h2>건의 사항 작성</h2>
+        <table>
+		<tbody>
+			<tr>
+				<th>제목</th>
+				<td><input type="text" name="title" class="input" required></td>
+            </tr>
+            <tr>
+				<th>공개 여부</th>
+				<td>
+                    <input type="radio" name="익명" value="" required>익명
+                    <input type="radio" name="익명" value="" required>공개
+				</td>
+            </tr>
+			<tr>
+				<th>내용</th>
+				<td><textarea rows="10" name="content" required></textarea></td>
+            </tr>	
+            <tr>
+                <th>첨부 파일</th> 
+                <td>
+                    <ul>
+                        <li><img src="file.png" alt="" class="replace"><input type="file" accept=".jpg,.png/" name="file" class="file"></li>
+                    </ul>
+                </td>          
+            </tr>	
+		</tbody>
+	</table>
+	<input type="submit" value="등록" id="reg">
+    </form>
+    <script>
+		function readURL(input) {
+			if(input.files && input.files[0]) {
+				var reader = new FileReader();
+
+				reader.onload=function(e) {
+					$('.replace').attr('src', e.target.result);
+				} 
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+		$(".file").change(function(){
+			readURL(this);
+        });
+	</script>
+</body>
+</html>
