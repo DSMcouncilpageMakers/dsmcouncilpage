@@ -75,7 +75,7 @@
                 <th>첨부 파일</th> 
                 <td>
                     <ul>
-                        <li><img src="file.png" alt="" class="replace"><input type="file" accept=".jpg,.png/" name="file" class="file"></li>
+                        <li><img src="file.png" alt="" class="replace"><input type="file" accept=".jpg,.png/" name="file" class="file" id="file1"></li>
                     </ul>
                 </td>          
             </tr>	
@@ -84,6 +84,7 @@
 	<input type="submit" value="등록" id="reg">
     </form>
     <script>
+        var i=2;
 		function readURL(input) {
 			if(input.files && input.files[0]) {
 				var reader = new FileReader();
@@ -92,11 +93,13 @@
 					$('.replace').attr('src', e.target.result);
 				} 
 				reader.readAsDataURL(input.files[0]);
-			}
+            }
+            $("ul").append($('<li><img src="file.png" alt="" class="replace"><input type="file" accept=".jpg,.png/" name="file" class="file" id="file"'+i+'></li>'));
 		}
 		$(".file").change(function(){
 			readURL(this);
         });
+        
 	</script>
 </body>
 </html>
